@@ -39,7 +39,7 @@ def index():
                 n=n+1
         number=str(number)
         s='INSERT INTO urlcollection (url,uniq) VALUES("'+data+'","'+number+'");'
-        number="http://127.0.0.1:5000/"+number
+        number=request.base_url+number
         c.execute(s)
         all=c.fetchone()
         conn.commit()
